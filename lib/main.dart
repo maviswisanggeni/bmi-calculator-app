@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          // #0A0E21
+          backgroundColor: Color(0xff0a0e21),
+        ),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
