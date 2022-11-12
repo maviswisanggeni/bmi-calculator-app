@@ -10,6 +10,8 @@ class BmiDataScreen extends StatefulWidget {
 }
 
 class _BmiDataScreenState extends State<BmiDataScreen> {
+  int height = 100;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,13 +43,60 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
           ),
         ),
         Expanded(
-            child: Container(
-          color: Colors.green,
-        )),
+          child: Container(
+            child: BmiCard(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "HEIGHT",
+                    style: labelTextStyle!.copyWith(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "$height",
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "cm",
+                        style: labelTextStyle,
+                      ),
+                    ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 80,
+                    max: 200,
+                    activeColor: Colors.white,
+                    thumbColor: Colors.red,
+                    onChanged: (value) {
+                      height = value.toInt();
+                      setState(() {});
+                    },
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
         Expanded(
-            child: Container(
-          color: Colors.blue,
-        )),
+          child: Container(
+            color: Colors.blue,
+          ),
+        ),
         GestureDetector(
           onTap: () {
             Navigator.of(context).push(
@@ -113,7 +162,7 @@ class GenderIconText extends StatelessWidget {
         ),
         Text(
           title,
-          style: genderTextStyle,
+          style: labelTextStyle,
         ),
       ],
     );
