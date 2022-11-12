@@ -2,7 +2,9 @@ import 'package:bmi/views/bmi_data_screen.dart';
 import 'package:flutter/material.dart';
 
 class BmiResultScreen extends StatelessWidget {
-  const BmiResultScreen({Key? key}) : super(key: key);
+  const BmiResultScreen({Key? key, required this.bmi}) : super(key: key);
+
+  final double bmi;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class BmiResultScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "18.5",
+                      "${bmi.toStringAsFixed(1)}",
                       style: TextStyle(
                         fontSize: 100,
                         fontWeight: FontWeight.bold,
