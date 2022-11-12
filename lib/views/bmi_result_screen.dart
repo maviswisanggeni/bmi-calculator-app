@@ -1,3 +1,4 @@
+import 'package:bmi/constants/constant.dart';
 import 'package:bmi/views/bmi_data_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,29 @@ class BmiResultScreen extends StatelessWidget {
   const BmiResultScreen({Key? key, required this.bmi}) : super(key: key);
 
   final double bmi;
+
+  determineBmiCategory(double bmiValue) {
+    String category = "";
+    if (bmiValue < 16.0) {
+      category = underweightSevere;
+    } else if (bmiValue < 17) {
+      category = underweightModerate;
+    } else if (bmiValue < 18.5) {
+      category = underweightMild;
+    } else if (bmiValue < 25) {
+      category = normal;
+    } else if (bmiValue < 30) {
+      category = overweight;
+    } else if (bmiValue < 35) {
+      category = obeseI;
+    } else if (bmiValue < 40) {
+      category = obeseII;
+    } else if (bmiValue >= 40) {
+      category = obeseIII;
+    }
+    
+    return category;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +65,7 @@ class BmiResultScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      "Normal",
+                      determineBmiCategory(bmi),
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
