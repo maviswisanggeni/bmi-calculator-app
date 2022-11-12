@@ -72,11 +72,11 @@ class BmiResultScreen extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 15,
               ),
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: const Text(
                 'Your Result',
                 style: TextStyle(
                   fontSize: 45,
@@ -99,15 +99,15 @@ class BmiResultScreen extends StatelessWidget {
                   children: [
                     Text(
                       bmiCategory,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                     Text(
-                      "${bmi.toStringAsFixed(1)}",
-                      style: TextStyle(
+                      bmi.toStringAsFixed(1),
+                      style: const TextStyle(
                         fontSize: 100,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -116,7 +116,7 @@ class BmiResultScreen extends StatelessWidget {
                     Text(
                       bmiDesc,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
                       ),
@@ -131,9 +131,9 @@ class BmiResultScreen extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Container(
-              color: Color(0xffF41056),
+              color: const Color(0xffF41056),
               height: 80,
-              child: Center(
+              child: const Center(
                 child: Text(
                   'RECALCULATE',
                   style: TextStyle(
