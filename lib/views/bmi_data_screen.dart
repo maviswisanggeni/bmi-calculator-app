@@ -244,7 +244,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
               ),
             ),
           ),
-        )
+        ),
       ]),
     );
   }
