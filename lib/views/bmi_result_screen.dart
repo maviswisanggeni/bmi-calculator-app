@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:bmi/constants/constant.dart';
 import 'package:bmi/helpers/bmi_calculator.dart';
 import 'package:bmi/views/bmi_data_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,63 +8,9 @@ class BmiResultScreen extends StatelessWidget {
   const BmiResultScreen({
     Key? key,
     required this.bmi,
-    // required this.bmiCalculator,
   }) : super(key: key);
 
   final double bmi;
-  // final BmiCalculator bmiCalculator;
-
-  // String determineBmiCategory(double bmiValue) {
-  //   String category = "";
-  //   if (bmiValue < 16.0) {
-  //     category = underweightSevere;
-  //   } else if (bmiValue < 17) {
-  //     category = underweightModerate;
-  //   } else if (bmiValue < 18.5) {
-  //     category = underweightMild;
-  //   } else if (bmiValue < 25) {
-  //     category = normal;
-  //   } else if (bmiValue < 30) {
-  //     category = overweight;
-  //   } else if (bmiValue < 35) {
-  //     category = obeseI;
-  //   } else if (bmiValue < 40) {
-  //     category = obeseII;
-  //   } else if (bmiValue >= 40) {
-  //     category = obeseIII;
-  //   }
-  //
-  //   return category;
-  // }
-  //
-  // String getHealthRiskDescription(String categoryName) {
-  //   String desc = "";
-  //   switch (categoryName) {
-  //     case underweightSevere:
-  //     case underweightModerate:
-  //     case underweightMild:
-  //       desc = "Possible nutritional deficiency and osteoporosis.";
-  //       break;
-  //     case normal:
-  //       desc = "Low risk (healthy weight).";
-  //       break;
-  //     case overweight:
-  //       desc =
-  //           "Moderate risk of developing heart disease, high blood pressure, stroke, diabetes.";
-  //       break;
-  //     case obeseI:
-  //     case obeseII:
-  //       desc =
-  //           "High risk of developing heart disease, high blood pressure, stroke, diabetes.";
-  //       break;
-  //     case obeseIII:
-  //       desc =
-  //           "Very high risk of developing heart disease, high blood pressure, stroke, diabetes.";
-  //       break;
-  //     default:
-  //   }
-  //   return desc;
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -86,13 +31,13 @@ class BmiResultScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         height: 60,
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [
-              const Color(0xff3260F4),
-              const Color(0xff8E57D1),
+              Color(0xff3260F4),
+              Color(0xff8E57D1),
             ],
           ),
         ),
@@ -121,8 +66,8 @@ class BmiResultScreen extends StatelessWidget {
               alignment: Alignment.center,
               height: 50,
               width: 50,
-              decoration: BoxDecoration(
-                color:const Color(0xff8E57D1),
+              decoration: const BoxDecoration(
+                color: Color(0xff8E57D1),
                 shape: BoxShape.circle,
               ),
               child: BackdropFilter(
@@ -131,7 +76,7 @@ class BmiResultScreen extends StatelessWidget {
                   sigmaY: 50,
                 ),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.transparent,
                     shape: BoxShape.circle,
                   ),
@@ -145,8 +90,8 @@ class BmiResultScreen extends StatelessWidget {
               alignment: Alignment.center,
               height: 50,
               width: 50,
-              decoration: BoxDecoration(
-                color:const Color(0xff3260F4),
+              decoration: const BoxDecoration(
+                color: Color(0xff3260F4),
                 shape: BoxShape.circle,
               ),
               child: BackdropFilter(
@@ -155,7 +100,7 @@ class BmiResultScreen extends StatelessWidget {
                   sigmaY: 50,
                 ),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.transparent,
                     shape: BoxShape.circle,
                   ),

@@ -19,14 +19,6 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
   int age = 20;
   String? gender;
 
-  // double calculateBMI() {
-  //   double heightInMeter = height / 100;
-  //   final h = heightInMeter * heightInMeter;
-  //   final bmi = weight / h;
-  //
-  //   return bmi;
-  // }
-
   List<Widget> generateList(start, end) {
     List<Widget> weights = [];
     for (var i = start; i < end; i++) {
@@ -65,13 +57,13 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
         },
         child: Container(
           height: 60,
-          margin: EdgeInsets.all(15),
+          margin: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [
-                const Color(0xff3260F4),
-                const Color(0xff8E57D1),
+                Color(0xff3260F4),
+                Color(0xff8E57D1),
               ],
             ),
           ),
@@ -97,8 +89,8 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
               child: Container(
                 height: 150,
                 width: 150,
-                decoration: BoxDecoration(
-                  color:const Color(0xff3260F4),
+                decoration: const BoxDecoration(
+                  color: Color(0xff3260F4),
                   shape: BoxShape.circle,
                 ),
                 child: BackdropFilter(
@@ -107,7 +99,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                     sigmaY: 120,
                   ),
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
                       shape: BoxShape.circle,
                     ),
@@ -115,14 +107,14 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                 ),
               ),
             ),
-Positioned(
+            Positioned(
               top: 50,
               right: -50,
               child: Container(
                 height: 150,
                 width: 150,
-                decoration: BoxDecoration(
-                  color:const Color(0xff8E57D1),
+                decoration: const BoxDecoration(
+                  color: Color(0xff8E57D1),
                   shape: BoxShape.circle,
                 ),
                 child: BackdropFilter(
@@ -131,7 +123,7 @@ Positioned(
                     sigmaY: 150,
                   ),
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
                       shape: BoxShape.circle,
                     ),
@@ -149,7 +141,9 @@ Positioned(
                         setState(() {});
                       },
                       child: BmiCard(
-                        borderColor: (gender == "male") ? Color(0xff3260F4) : Colors.white10,
+                        borderColor: (gender == "male")
+                            ? const Color(0xff3260F4)
+                            : Colors.white10,
                         child: Stack(
                           children: [
                             const Center(
@@ -169,7 +163,7 @@ Positioned(
                               child: Icon(
                                 Icons.check_circle,
                                 color: (gender == "male")
-                                    ? Color(0xff3260F4)
+                                    ? const Color(0xff3260F4)
                                     : Colors.transparent,
                               ),
                             ),
@@ -185,8 +179,9 @@ Positioned(
                         setState(() {});
                       },
                       child: BmiCard(
-                        borderColor:
-                            (gender == "female" ? Color(0xff3260F4) : Colors.white10),
+                        borderColor: (gender == "female"
+                            ? const Color(0xff3260F4)
+                            : Colors.white10),
                         child: Stack(
                           children: [
                             const Center(
@@ -206,7 +201,7 @@ Positioned(
                               child: Icon(
                                 Icons.check_circle,
                                 color: (gender == "female")
-                                    ? Color(0xff3260F4)
+                                    ? const Color(0xff3260F4)
                                     : Colors.transparent,
                               ),
                             ),
@@ -217,7 +212,7 @@ Positioned(
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Column(
@@ -271,87 +266,89 @@ Positioned(
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              Container(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "WEIGHT",
-                            style: labelTextStyle!
-                                .copyWith(fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          BmiCard(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
-                                    vertical: 15,
-                                  ),
-                                  height: MediaQuery.of(context).size.height * 0.2,
-                                  child: CupertinoPicker(
-                                      itemExtent: 25,
-                                      squeeze: 0.8,
-                                      scrollController: FixedExtentScrollController(
-                                          initialItem: 30),
-                                      magnification: 2,
-                                      useMagnifier: true,
-                                      onSelectedItemChanged: (val) {
-                                        weight = val + 20;
-                                      },
-                                      children: generateList(20, 220)),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "WEIGHT",
+                          style: labelTextStyle!.copyWith(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        BmiCard(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 15,
                                 ),
-                              ],
-                            ),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.2,
+                                child: CupertinoPicker(
+                                    itemExtent: 25,
+                                    squeeze: 0.8,
+                                    scrollController:
+                                        FixedExtentScrollController(
+                                            initialItem: 30),
+                                    magnification: 2,
+                                    useMagnifier: true,
+                                    onSelectedItemChanged: (val) {
+                                      weight = val + 20;
+                                    },
+                                    children: generateList(20, 220)),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Text(
-                            "AGE",
-                            style: labelTextStyle!
-                                .copyWith(fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          BmiCard(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
-                                    vertical: 15,
-                                  ),
-                                  height: MediaQuery.of(context).size.height * 0.2,
-                                  child: CupertinoPicker(
-                                      itemExtent: 25,
-                                      squeeze: 0.8,
-                                      scrollController: FixedExtentScrollController(
-                                          initialItem: 5),
-                                      magnification: 2,
-                                      useMagnifier: true,
-                                      onSelectedItemChanged: (val) {
-                                        weight = val + 20;
-                                      },
-                                      children: generateList(15, 90)),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          "AGE",
+                          style: labelTextStyle!.copyWith(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        BmiCard(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 15,
                                 ),
-                              ],
-                            ),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.2,
+                                child: CupertinoPicker(
+                                    itemExtent: 25,
+                                    squeeze: 0.8,
+                                    scrollController:
+                                        FixedExtentScrollController(
+                                            initialItem: 5),
+                                    magnification: 2,
+                                    useMagnifier: true,
+                                    onSelectedItemChanged: (val) {
+                                      weight = val + 20;
+                                    },
+                                    children: generateList(15, 90)),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ]),
           ],

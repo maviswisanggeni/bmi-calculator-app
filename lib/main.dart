@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: primaryColor,
         scaffoldBackgroundColor: primaryColor,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           shadowColor: Colors.transparent,
           // #0A0E21
           backgroundColor: primaryColor,
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: BmiDataScreen(),
+      home: const BmiDataScreen(),
     );
   }
 }
