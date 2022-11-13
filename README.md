@@ -16,7 +16,7 @@ BMI Application made with Flutter
 <br />
 
 <div align="center">
-  <img src="https://f.top4top.io/p_2508hbjbs1.jpg" width="33%"/>
-  <img src="https://l.top4top.io/p_2508fwfz81.jpg" width="33%"/>
-  <img src="https://g.top4top.io/p_250882epe1.jpg" width="33%"/>
+  <img src="https://f.top4top.io/p_2508hbjbs1.jpg" width="20%"/>
+  <img src="https://l.top4top.io/p_2508fwfz81.jpg" width="20%"/>
+  <img src="https://g.top4top.io/p_250882epe1.jpg" width="20%"/>
 </div>
