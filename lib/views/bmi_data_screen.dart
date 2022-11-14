@@ -339,7 +339,6 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                                     useMagnifier: true,
                                     onSelectedItemChanged: (val) {
                                       weight = val + 15;
-                                      print(weight);
                                     },
                                     children: generateList(15, 90)),
                               ),
