@@ -11,9 +11,9 @@ class BmiCalculator {
   BmiCalculator.fromBmiValue(this.bmi);
 
   double calculateBMI() {
-    double heightInMeter = height! / 100;
+    double heightInMeter = (height ?? 0) / 100;
     final h = heightInMeter * heightInMeter;
-    bmi = weight! / h;
+    bmi = (weight ?? 0) / h;
 
     return bmi!;
   }
@@ -22,19 +22,19 @@ class BmiCalculator {
     String category = "";
     if (bmi! < 16.0) {
       category = underweightSevere;
-    } else if (bmi! < 17) {
+    } else if (bmi! < 17 && bmi! >= 16.0) {
       category = underweightModerate;
-    } else if (bmi! < 18.5) {
+    } else if (bmi! < 18.5 && bmi! >= 17) {
       category = underweightMild;
-    } else if (bmi! < 25) {
+    } else if (bmi! < 25 && bmi! >= 18.5) {
       category = normal;
-    } else if (bmi! < 30) {
+    } else if (bmi! < 30 && bmi! >= 25) {
       category = overweight;
-    } else if (bmi! < 35) {
+    } else if (bmi! < 35 && bmi! >= 30) {
       category = obeseI;
-    } else if (bmi! < 40) {
+    } else if (bmi! < 40 && bmi! >= 35) {
       category = obeseII;
-    } else if (bmi! >= 40) {
+    } else if (bmi! >= 40 && bmi! >= 40) {
       category = obeseIII;
     }
 
